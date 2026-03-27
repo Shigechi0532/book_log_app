@@ -19,10 +19,13 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // todo:appBarをnullにする。（今回はappbarを使用しない）
       appBar: AppBar(title: const Text('読書記録')),
       body: Row(
         children: [
           // サイドメニュー（左側）
+          // todo:NavigationRailからContainerの中にColumnを入れる構成に変更
+          // todo:上部にタイトル表示
           NavigationRail(
             selectedIndex: 0,
             onDestinationSelected: (index) {},
@@ -35,6 +38,8 @@ class MainPage extends StatelessWidget {
           ),
 
           // メインコンテンツ
+          // todo:上部に下記を表示
+          // 「ダッシュボード」「ライブラリー」「検索バー」「設定アイコン」
           Expanded(
             child: ListView(
               children: List.generate(
