@@ -26,7 +26,7 @@ class MainPage extends StatelessWidget {
           // サイドメニュー（左側）
           // todo:NavigationRailからContainerの中にColumnを入れる構成に変更
           // todo:上部にタイトル表示
-          HeaderContainer(title: "ホーム"),
+          HeaderContainer(),
 
           // メインコンテンツ
           // todo:上部に下記を表示
@@ -46,16 +46,52 @@ class MainPage extends StatelessWidget {
 }
 
 class HeaderContainer extends StatelessWidget {
-  final String title;
-
-  const HeaderContainer({super.key, required this.title});
+  const HeaderContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(16),
-      color: Colors.blue,
-      child: Text(title, style: TextStyle(fontSize: 20, color: Colors.white)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // タイトル
+          Text(
+            "ロゴ",
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+
+          // ダッシュボード画面遷移
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              "ダッシュボード",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+
+          // ライブラリ画面遷移
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              "ライブラリ",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+
+          // 設定画面遷移アイコン
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.settings, color: Colors.grey),
+          ),
+
+          // アカウント設定画面遷移アイコン
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.account_circle, color: Colors.blue),
+          ),
+        ],
+      ),
     );
   }
 }
