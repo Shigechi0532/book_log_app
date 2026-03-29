@@ -20,22 +20,13 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // todo:appBarをnullにする。（今回はappbarを使用しない）
-      appBar: AppBar(title: const Text('読書記録')),
-      body: Row(
+      appBar: null,
+      body: Column(
         children: [
           // サイドメニュー（左側）
           // todo:NavigationRailからContainerの中にColumnを入れる構成に変更
           // todo:上部にタイトル表示
-          NavigationRail(
-            selectedIndex: 0,
-            onDestinationSelected: (index) {},
-            destinations: const [
-              NavigationRailDestination(
-                icon: Icon(Icons.person),
-                label: Text('プロフィール'),
-              ),
-            ],
-          ),
+          HeaderContainer(title: "ホーム"),
 
           // メインコンテンツ
           // todo:上部に下記を表示
@@ -50,6 +41,21 @@ class MainPage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class HeaderContainer extends StatelessWidget {
+  final String title;
+
+  const HeaderContainer({super.key, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(16),
+      color: Colors.blue,
+      child: Text(title, style: TextStyle(fontSize: 20, color: Colors.white)),
     );
   }
 }
