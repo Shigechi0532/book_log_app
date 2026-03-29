@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MainApp());
@@ -23,14 +24,14 @@ class MainPage extends StatelessWidget {
       appBar: null,
       body: Column(
         children: [
+          // 上部ナビゲーション
+          HeaderContainer(),
+
           // サイドメニュー（左側）
           // todo:NavigationRailからContainerの中にColumnを入れる構成に変更
           // todo:上部にタイトル表示
-          HeaderContainer(),
 
           // メインコンテンツ
-          // todo:上部に下記を表示
-          // 「ダッシュボード」「ライブラリー」「検索バー」「設定アイコン」
           Expanded(
             child: ListView(
               children: List.generate(
@@ -45,6 +46,7 @@ class MainPage extends StatelessWidget {
   }
 }
 
+// 上部ナビゲーションクラス
 class HeaderContainer extends StatelessWidget {
   const HeaderContainer({super.key});
 
@@ -57,9 +59,14 @@ class HeaderContainer extends StatelessWidget {
         children: [
           // タイトル
           Text(
-            "ロゴ",
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            "読書履歴",
+            style: GoogleFonts.playwriteDkUloopetGuides(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
           ),
+
+          Spacer(),
 
           // ダッシュボード画面遷移
           TextButton(
@@ -78,6 +85,8 @@ class HeaderContainer extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ),
+
+          SizedBox(width: 20),
 
           // 設定画面遷移アイコン
           IconButton(
