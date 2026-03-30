@@ -28,6 +28,7 @@ class MainPage extends StatelessWidget {
           HeaderContainer(),
 
           // サイドメニュー（左側）
+          SideBar(),
           // メインコンテンツ（右側）
         ],
       ),
@@ -101,20 +102,28 @@ class SideBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsetsGeometry.all(16),
+            padding: EdgeInsets.only(left: 15, top: 20),
             child: Text(
               "ライブラリ",
               textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 16, color: Colors.grey),
+              style: TextStyle(fontSize: 12, color: Colors.grey),
             ),
           ),
 
-          ListTile(title: Text("すべての本"), onTap: () {}),
-          ListTile(title: Text("読みたい本"), onTap: () {}),
-          ListTile(title: Text("読書中"), onTap: () {}),
-          ListTile(title: Text("読み終えた本"), onTap: () {}),
+          Padding(
+            padding: EdgeInsets.only(left: 30, top: 15),
+            child: Column(
+              children: [
+                ListTile(title: Text("すべての本"), onTap: () {}),
+                ListTile(title: Text("読みたい本"), onTap: () {}),
+                ListTile(title: Text("読書中"), onTap: () {}),
+                ListTile(title: Text("読み終えた本"), onTap: () {}),
+              ],
+            ),
+          ),
         ],
       ),
     );
