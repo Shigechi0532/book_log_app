@@ -28,18 +28,7 @@ class MainPage extends StatelessWidget {
           HeaderContainer(),
 
           // サイドメニュー（左側）
-          // todo:NavigationRailからContainerの中にColumnを入れる構成に変更
-          // todo:上部にタイトル表示
-
-          // メインコンテンツ
-          Expanded(
-            child: ListView(
-              children: List.generate(
-                30,
-                (index) => ListTile(title: Text('アイテム $index')),
-              ),
-            ),
-          ),
+          // メインコンテンツ（右側）
         ],
       ),
     );
@@ -102,5 +91,14 @@ class HeaderContainer extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class SideBar extends StatelessWidget {
+  const SideBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(child: Column(children: [Text()]));
   }
 }
