@@ -99,6 +99,24 @@ class SideBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: Column(children: [Text()]));
+    return Container(
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsetsGeometry.all(16),
+            child: Text(
+              "ライブラリ",
+              textAlign: TextAlign.left,
+              style: TextStyle(fontSize: 16, color: Colors.grey),
+            ),
+          ),
+
+          ListTile(title: Text("すべての本"), onTap: () {}),
+          ListTile(title: Text("読みたい本"), onTap: () {}),
+          ListTile(title: Text("読書中"), onTap: () {}),
+          ListTile(title: Text("読み終えた本"), onTap: () {}),
+        ],
+      ),
+    );
   }
 }
